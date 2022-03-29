@@ -39,4 +39,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.from === 'popup' && request.subject === 'startDownloads') {
         startDownload(request.reference_id);
     }
+    return true; // make sendResponse() work asynchronously
 });

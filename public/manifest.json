@@ -1,11 +1,11 @@
 {
 
   "manifest_version": 2,
-  "name": "CUC-Tronclass-Downloader",
-  "version": "0.0.1",
+  "name": "TronCUClass",
+  "version": "0.2.0",
 
   "description": "CUC 畅课课件下载（支持所有格式） Download coursewares for CUC Tronclass (all types available)",
-  "homepage_url": "https://github.com/YanhuiJessica/CUC-Tronclass-Downloader",
+  "homepage_url": "https://github.com/YanhuiJessica/TronCUClass",
 
   "icons": {
     "32": "icons/tronclass-dl-32.png",
@@ -14,16 +14,16 @@
 
   "permissions": [
     "activeTab", "downloads",
-    "*://courses.cuc.edu.cn/*",
-    "*://cdn.staticfile.org/font-awesome/*"
+    "*://courses.cuc.edu.cn/*"
   ],
 
   "browser_action": {
     "default_icon": {
-      "32": "icons/tronclass-dl-32.png"
+      "32": "icons/tronclass-dl-32.png",
+      "48": "icons/tronclass-dl-48.png"
     },
-    "default_title": "Tronclass-dl",
-    "default_popup": "popup/index.html"
+    "default_title": "TronCUClass",
+    "default_popup": "index.html"
   },
 
   "content_scripts": [
