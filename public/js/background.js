@@ -9,12 +9,15 @@ function getQueryVariable(query, variable)
        return false;
 }
 
-chrome.runtime.onMessage.addListener(request => {
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.from === 'content') {
         let filename = getQueryVariable(decodeURI(request.url), 'name');
         chrome.downloads.download({
             url: request.url,
             filename: filename,
+        }, function(id) {
+            sendResponse({state: id != undefined});
         });
     }
+    return true;
 });

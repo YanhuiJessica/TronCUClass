@@ -8,7 +8,7 @@ const TableRow = (props) => {
   return (
     <tr>
       <td><input type="radio" name="courseware" value={props.index} /></td>
-      <td>{props.upload.name}</td>
+      <td>{props.upload.fileInfo.name}</td>
       <td></td>
     </tr>
   )
@@ -42,7 +42,12 @@ const handleClick = () => {
         for (let i of ids) {
             chrome.tabs.sendMessage(
                 tabs[0].id,
-                {from: 'popup', subject: 'startDownloads', reference_id: uploads[i].reference_id}
+                {
+                  from: 'popup',
+                  subject: 'startDownloads',
+                  reference_id: uploads[i].fileInfo.reference_id,
+                  uindex: i
+                }
             ).then().catch(onError);
         }
     });

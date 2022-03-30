@@ -1,7 +1,8 @@
 const courseId = window.location.pathname.split('/')[2];
 
-let xhr = new XMLHttpRequest(), xhrDl = new XMLHttpRequest();
-var uploads = [];
+let xhr = new XMLHttpRequest(),
+    xhrDl = new XMLHttpRequest();
+let uploads = [], uindex;
 
 xhr.onload = function() {
     const data = JSON.parse(this.responseText);
@@ -9,7 +10,7 @@ xhr.onload = function() {
     for (let c of coursewares) {
         if (c['uploads'].length > 0) {
             for (let u of c['uploads']) {
-                uploads.push(u);
+                uploads.push({cwid: c['id'], fileInfo: u});
             }
         }
     }
@@ -23,8 +24,25 @@ xhr.send();
 
 xhrDl.onload = function() {
     const data = JSON.parse(this.responseText);
-    var url = data['url'];
-    chrome.runtime.sendMessage({from: 'content', url: url});
+    let url = data['url'];
+    chrome.runtime.sendMessage({from: 'content', url: url},
+        function(response) {
+            if (response.state) {
+                if (uploads[uindex].fileInfo.type != 'video') {
+                    let markReadUrl = `http://courses.cuc.edu.cn/api/course/activities-read/${uploads[uindex].cwid}`;
+                    fetch(markReadUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            "upload_id": uploads[uindex].fileInfo.id,
+                        }),
+                    })
+                }
+            }
+        }
+    );
 };
 
 function startDownload(reference_id) {
@@ -37,6 +55,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         sendResponse({uploads: uploads});
     }
     if (request.from === 'popup' && request.subject === 'startDownloads') {
+        uindex = request.uindex;
         startDownload(request.reference_id);
     }
     return true; // make sendResponse() work asynchronously
