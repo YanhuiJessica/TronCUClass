@@ -1,0 +1,9 @@
+.theader {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+
+.file-info {
+    white-space: nowrap;
+}

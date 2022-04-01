@@ -1,6 +1,7 @@
 /*global chrome*/
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Table } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,7 +9,7 @@ const TableRow = (props) => {
   return (
     <tr>
       <td><input type="radio" name="courseware" value={props.index} /></td>
-      <td>{props.upload.fileInfo.name}</td>
+      <td><div className="file-info">{props.upload.fileInfo.name}</div></td>
       <td></td>
     </tr>
   )
@@ -53,10 +54,10 @@ const handleClick = () => {
     });
 }
 
-const Table = (props) => {
+const CWTable = (props) => {
   return (
-    <table>
-      <thead>
+    <Table hover size="sm">
+      <thead className='theader'>
         <th>
           {/* <input type="checkbox" id="select-all"> */}
         </th>
@@ -66,7 +67,7 @@ const Table = (props) => {
         </th>
       </thead>
       <TableBody uploads={props.uploads} />
-    </table>
+    </Table>
   )
 }
 
@@ -74,25 +75,25 @@ const Coursewares = (props) => {
   if (props.uploads && props.uploads.length === 0) {
     return (
       <>
-        <p>当前课程没有可下载的课件</p>
+        <nobr>当前课程没有可下载的课件</nobr>
       </>
     );
   } else if (props.uploads && props.uploads.length > 0) {
     return (
       <>
-        <Table uploads={props.uploads} />
+        <CWTable uploads={props.uploads} />
       </>
     );
   } else if (props.uploads === null) {
     return (
       <>
-        <p>正在获取课件列表...</p>
+        <nobr>正在获取课件列表...</nobr>
       </>
     );
   } else {
     return (
       <>
-        <p>未选中课程页面</p>
+        <nobr>未选中课程页面</nobr>
       </>
     );
   }
@@ -113,12 +114,12 @@ const App = () => {
 
   setTimeout(() => {
     setState(uploads);
-  }, 500);
+  }, 200);
   
   return (
-    <>
+    <div className='container'>
       <Coursewares uploads={state}/>
-    </>
+    </div>
   );
 }
 
