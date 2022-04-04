@@ -1,0 +1,12 @@
+{
+    "addons": {
+        "{d371896c-024e-4a2c-b5f3-c1fcbefd3858}": {
+            "updates": [
+                {
+                    "version": "1.0.0",
+                    "update_link": "https://github.com/YanhuiJessica/TronCUClass/releases/download/v1.0.0/troncuclass-1.0.0-fx.xpi"
+                }
+            ]
+        }
+    }
+}
