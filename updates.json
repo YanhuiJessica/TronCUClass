@@ -5,6 +5,10 @@
                 {
                     "version": "1.0.0",
                     "update_link": "https://github.com/YanhuiJessica/TronCUClass/releases/download/v1.0.0/troncuclass-1.0.0-fx.xpi"
+                },
+                {
+                    "version": "1.0.1",
+                    "update_link": "https://github.com/YanhuiJessica/TronCUClass/releases/download/v1.0.1/troncuclass-1.0.1-fx.xpi"
                 }
             ]
         }
