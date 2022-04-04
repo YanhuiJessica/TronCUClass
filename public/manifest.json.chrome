@@ -2,7 +2,7 @@
 
   "manifest_version": 3,
   "name": "TronCUClass",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "description": "CUC 畅课课件下载（支持所有格式） Download coursewares for CUC Tronclass (all types available)",
   "homepage_url": "https://github.com/YanhuiJessica/TronCUClass",
@@ -16,8 +16,7 @@
     "activeTab", "downloads"
   ],
   "host_permissions": [
-    "*://courses.cuc.edu.cn/*",
-    "*://maxcdn.bootstrapcdn.com/*"
+    "*://courses.cuc.edu.cn/*"
   ],
 
   "action": {
