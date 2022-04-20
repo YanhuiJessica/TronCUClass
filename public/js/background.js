@@ -11,7 +11,7 @@ function getQueryVariable(query, variable)
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.from === 'content') {
-        let filename = getQueryVariable(decodeURI(request.url), 'name');
+        let filename = getQueryVariable(decodeURIComponent(request.url), 'name');
         chrome.downloads.download({
             url: request.url,
             filename: filename,
