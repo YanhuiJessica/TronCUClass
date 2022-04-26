@@ -10,7 +10,7 @@
 ## Install
 
 - Chrome 用户可正常通过 [应用商店](https://chrome.google.com/webstore/detail/troncuclass/oekepilgaknaenpkamkpiigfndkjlmil) 进行下载安装
-- Firefox 用户需在 [Releases](https://github.com/YanhuiJessica/TronCUClass/releases) 界面下选择合适的版本，点击对应版本附件中的 `xpi` 文件，将自动下载并提示安装，后续更新由浏览器完成
+- Firefox 用户需在 [Releases](https://github.com/YanhuiJessica/TronCUClass/releases) 界面下选择合适的版本，点击对应版本附件中的 `xpi` 文件，将自动下载并提示安装，后续更新默认由浏览器完成（或选择手动更新）
 
 ## Dev
 
