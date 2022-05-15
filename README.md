@@ -1,7 +1,7 @@
 <p align="center"><img width="100" alt="CUC Tronclass Courseware Downloader" src="img/tronclass-dl.jpg"></p>
 <p align="center">CUC 畅课（TronClass） <strong>课件下载</strong> 浏览器插件</p>
 
-<p align="center"><a rel="noreferrer noopener" href="https://chrome.google.com/webstore/detail/troncuclass/oekepilgaknaenpkamkpiigfndkjlmil"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Chrome-141e24.svg?&style=for-the-badge&logo=google-chrome&logoColor=white&color=04acbd"></a>  <img alt="Firefox Add-ons" src="https://img.shields.io/badge/Firefox-141e24.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white&color=04acbd">
+<p align="center"><a href="https://chrome.google.com/webstore/detail/troncuclass/oekepilgaknaenpkamkpiigfndkjlmil"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Chrome-141e24.svg?&style=for-the-badge&logo=google-chrome&logoColor=white&color=04acbd"></a>  <a href="https://github.com/YanhuiJessica/TronCUClass/releases"><img alt="Firefox Add-ons" src="https://img.shields.io/badge/Firefox-141e24.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white&color=04acbd"></a>
 
 <h2 align="center">TronCUClass</h2>
 
