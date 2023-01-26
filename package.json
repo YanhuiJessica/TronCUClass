@@ -17,7 +17,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "INLINE_RUNTIME_CHUNK=false react-scripts build",
+    "build:chrome": "mv public/manifest.json.chrome public/manifest.json && INLINE_RUNTIME_CHUNK=false react-scripts build && zip -qr troncuclass-chrome.zip build/ && mv public/manifest.json public/manifest.json.chrome",
+    "build:firefox": "mv public/manifest.json.firefox public/manifest.json && INLINE_RUNTIME_CHUNK=false react-scripts build && cd build/ && zip -qr $OLDPWD/troncuclass-firefox.zip . && cd - && mv public/manifest.json public/manifest.json.firefox",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

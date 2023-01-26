@@ -14,13 +14,19 @@
 
 ## Dev
 
-- 开发环境初始化
+开发环境初始化
 
-    ```bash
-    git clone https://github.com/YanhuiJessica/TronCUClass.git
-    cd TronCUClass/
-    npm install
-    ```
+```bash
+git clone https://github.com/YanhuiJessica/TronCUClass.git
+cd TronCUClass/
+npm install
+```
 
-- 根据当前使用浏览器的不同，将 `public` 目录下的 `manifest.json.chrome` 或 `manifest.json.firefox` 的文件名修改为 `manifest.json`
-- 在项目根目录执行：`npm run build`
+### Build
+
+在项目根目录执行
+
+```bash
+npm run build:firefox   # troncuclass-firefox.zip
+npm run build:chrome    # troncuclass-chrome.zip
+```
