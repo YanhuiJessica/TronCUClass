@@ -19,7 +19,7 @@ xhr.onerror = function() {
     console.log('An error occurred fetching the JSON');
 };
 
-xhr.open('GET', `http://courses.cuc.edu.cn/api/courses/${courseId}/activities`, true);
+xhr.open('GET', `https://courses.cuc.edu.cn/api/courses/${courseId}/activities`, true);
 xhr.send();
 
 xhrDl.onload = function() {
@@ -29,7 +29,7 @@ xhrDl.onload = function() {
         function(response) {
             if (response.state) {
                 if (uploads[uindex].fileInfo.type != 'video') {
-                    let markReadUrl = `http://courses.cuc.edu.cn/api/course/activities-read/${uploads[uindex].cwid}`;
+                    let markReadUrl = `https://courses.cuc.edu.cn/api/course/activities-read/${uploads[uindex].cwid}`;
                     fetch(markReadUrl, {
                         method: 'POST',
                         headers: {
@@ -46,7 +46,7 @@ xhrDl.onload = function() {
 };
 
 function startDownload(reference_id) {
-    xhrDl.open('GET', `http://courses.cuc.edu.cn/api/uploads/reference/document/${reference_id}/url?preview=true`, true);
+    xhrDl.open('GET', `https://courses.cuc.edu.cn/api/uploads/reference/document/${reference_id}/url?preview=true`, true);
     xhrDl.send();
 }
 
